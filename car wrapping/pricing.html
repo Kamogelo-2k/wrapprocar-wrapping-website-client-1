@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Car wrap pricing, instant quotes, and secure R250 booking via PayPal. Full wraps, partial wraps, and PPF from WrapPro in Johannesburg.">
+    <title>Pricing & Book Online | WrapPro Car Wrapping</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <a href="index.html"><span class="logo-text">WRAP<span class="logo-accent">PRO</span></span></a>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="pricing.html" class="active">Pricing</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-cta">
+                    <a href="#book-appointment" class="btn btn-primary">Book Now</a>
+                </div>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Pricing & Booking</h1>
+            <p>Build your quote, then secure your slot with a R250 PayPal booking fee</p>
+        </div>
+    </section>
+
+    <!-- Starting Prices -->
+    <section class="pricing-overview">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Starting From</span>
+                <h2 class="section-title">Our Pricing Guide</h2>
+                <p class="section-description">Final pricing depends on vehicle size, material choice, and complexity. Use the quote builder below for a tailored estimate.</p>
+            </div>
+            <div class="pricing-cards">
+                <div class="pricing-card">
+                    <h3>Full Car Wrap</h3>
+                    <div class="pricing-amount">R25,000</div>
+                    <p>Complete colour change for hatchbacks and compact cars. Sedans, SUVs, and luxury vehicles priced higher.</p>
+                    <a href="#quote-builder" class="btn btn-outline">Build Quote</a>
+                </div>
+                <div class="pricing-card featured">
+                    <span class="pricing-badge">Most Popular</span>
+                    <h3>Partial Wrap</h3>
+                    <div class="pricing-amount">R3,500</div>
+                    <p>Roof, hood, accents, and custom graphics. Mix and match areas to suit your budget.</p>
+                    <a href="#quote-builder" class="btn btn-primary">Build Quote</a>
+                </div>
+                <div class="pricing-card">
+                    <h3>Paint Protection (PPF)</h3>
+                    <div class="pricing-amount">R4,500</div>
+                    <p>Clear film for bumpers, full front, or full body. Invisible protection against chips and scratches.</p>
+                    <a href="#quote-builder" class="btn btn-outline">Build Quote</a>
+                </div>
+                <div class="pricing-card">
+                    <h3>Fleet Branding</h3>
+                    <div class="pricing-amount">Custom</div>
+                    <p>Volume discounts for commercial fleets. Design consultation and installation included.</p>
+                    <a href="contact.html" class="btn btn-outline">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Quote Builder -->
+    <section class="booking-section" id="quote-builder">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Instant Quote</span>
+                <h2 class="section-title">Build Your Quote</h2>
+                <p class="section-description">Select your service, options, and finishes to see an estimated total and deposit amount.</p>
+            </div>
+
+            <!-- Step 1: Service Selection -->
+            <div class="booking-step active" id="step1">
+                <div class="step-header">
+                    <h2>Choose Your Service</h2>
+                    <p class="step-subtitle">What would you like done?</p>
+                </div>
+                <div class="service-selection-grid">
+                    <button type="button" class="service-option-btn" data-service="full-wrap">
+                        <img src="images/full-wrap.jpg" alt="" class="service-option-thumb" width="400" height="240">
+                        <span class="service-label">Full Wrap</span>
+                    </button>
+                    <button type="button" class="service-option-btn" data-service="partial-wrap">
+                        <img src="images/partial-wrap.jpg" alt="" class="service-option-thumb" width="400" height="240">
+                        <span class="service-label">Partial Wrap</span>
+                    </button>
+                    <button type="button" class="service-option-btn" data-service="ppf">
+                        <img src="images/ppf.jpg" alt="" class="service-option-thumb" width="400" height="240">
+                        <span class="service-label">PPF Only</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 2: Vehicle / Areas -->
+            <div class="booking-step" id="step2">
+                <div class="step-header">
+                    <button type="button" class="back-btn" onclick="goToStep(1)">← Back</button>
+                    <h2 id="step2-title">Select Options</h2>
+                    <p class="step-subtitle">Choose your vehicle size or wrap areas</p>
+                </div>
+
+                <div id="partial-wrap-options" class="service-options" style="display: none;">
+                    <h3>Partial Wrap Areas</h3>
+                    <div class="options-grid">
+                        <label class="option-checkbox"><input type="checkbox" value="roof" data-price="3500"><span>Roof — R3,500</span></label>
+                        <label class="option-checkbox"><input type="checkbox" value="hood" data-price="4500"><span>Hood — R4,500</span></label>
+                        <label class="option-checkbox"><input type="checkbox" value="trunk" data-price="3500"><span>Trunk / Boot — R3,500</span></label>
+                        <label class="option-checkbox"><input type="checkbox" value="mirrors" data-price="1200"><span>Mirrors — R1,200</span></label>
+                        <label class="option-checkbox"><input type="checkbox" value="doors" data-price="6000"><span>Doors (pair) — R6,000</span></label>
+                        <label class="option-checkbox"><input type="checkbox" value="bumpers" data-price="5000"><span>Bumpers — R5,000</span></label>
+                    </div>
+                </div>
+
+                <div id="full-wrap-options" class="service-options" style="display: none;">
+                    <h3>Vehicle Size</h3>
+                    <div class="options-grid">
+                        <label class="option-radio"><input type="radio" name="vehicle-type" value="small" data-price="25000"><span>Small / Hatchback — R25,000</span></label>
+                        <label class="option-radio"><input type="radio" name="vehicle-type" value="sedan" data-price="35000"><span>Sedan — R35,000</span></label>
+                        <label class="option-radio"><input type="radio" name="vehicle-type" value="suv" data-price="45000"><span>SUV / Bakkie — R45,000</span></label>
+                        <label class="option-radio"><input type="radio" name="vehicle-type" value="luxury" data-price="55000"><span>Luxury / Large — R55,000</span></label>
+                    </div>
+                </div>
+
+                <div class="step-actions">
+                    <button type="button" class="btn btn-primary" id="continue-to-color" style="display: none;" onclick="goToStep(3)">Continue</button>
+                </div>
+            </div>
+
+            <!-- Step 3: Finish & Color -->
+            <div class="booking-step" id="step3">
+                <div class="step-header">
+                    <button type="button" class="back-btn" onclick="goToStep(2)">← Back</button>
+                    <h2>Finish &amp; Color</h2>
+                    <p class="step-subtitle">Choose your vinyl finish and preferred colour</p>
+                </div>
+
+                <div class="finish-selection">
+                    <h3>Vinyl Finish</h3>
+                    <div class="finish-options">
+                        <label class="finish-radio"><input type="radio" name="vinyl-finish" value="matte" data-multiplier="1"><span>Matte</span></label>
+                        <label class="finish-radio"><input type="radio" name="vinyl-finish" value="gloss" data-multiplier="1"><span>Gloss</span></label>
+                        <label class="finish-radio"><input type="radio" name="vinyl-finish" value="satin" data-multiplier="1.05"><span>Satin (+5%)</span></label>
+                        <label class="finish-radio"><input type="radio" name="vinyl-finish" value="chrome" data-multiplier="1.5"><span>Chrome (+50%)</span></label>
+                        <label class="finish-radio"><input type="radio" name="vinyl-finish" value="carbon" data-multiplier="1.3"><span>Carbon (+30%)</span></label>
+                    </div>
+                </div>
+
+                <div class="color-selection">
+                    <h3>Colour</h3>
+                    <div class="color-swatches">
+                        <label class="color-swatch"><input type="radio" name="color" value="black"><span class="swatch-box" style="background:#111"></span><span>Black</span></label>
+                        <label class="color-swatch"><input type="radio" name="color" value="white"><span class="swatch-box" style="background:#f5f5f5"></span><span>White</span></label>
+                        <label class="color-swatch"><input type="radio" name="color" value="red"><span class="swatch-box" style="background:#c1121f"></span><span>Red</span></label>
+                        <label class="color-swatch"><input type="radio" name="color" value="blue"><span class="swatch-box" style="background:#0077b6"></span><span>Blue</span></label>
+                        <label class="color-swatch"><input type="radio" name="color" value="grey"><span class="swatch-box" style="background:#6c757d"></span><span>Grey</span></label>
+                        <label class="color-swatch"><input type="radio" name="color" value="custom"><span class="swatch-box" style="background:linear-gradient(135deg,#e63946,#ffd60a)"></span><span>Custom</span></label>
+                    </div>
+                </div>
+
+                <div class="step-actions">
+                    <button type="button" class="btn btn-primary" onclick="goToStep(4)">Continue to Add-ons</button>
+                </div>
+            </div>
+
+            <!-- Step 4: PPF Add-ons -->
+            <div class="booking-step" id="step4">
+                <div class="step-header">
+                    <button type="button" class="back-btn" id="ppf-back-btn" onclick="goToStep(3)">← Back</button>
+                    <h2 id="ppf-title">PPF Options</h2>
+                    <p class="step-subtitle">Optional paint protection — skip if not needed</p>
+                </div>
+
+                <div class="service-options">
+                    <div class="options-grid">
+                        <label class="option-checkbox"><input type="checkbox" name="ppf-options" value="front-bumper" data-price="4500"><span>Front Bumper — R4,500</span></label>
+                        <label class="option-checkbox"><input type="checkbox" name="ppf-options" value="headlights" data-price="2500"><span>Headlights — R2,500</span></label>
+                        <label class="option-checkbox"><input type="checkbox" name="ppf-options" value="full-front" data-price="22000"><span>Full Front — R22,000</span></label>
+                        <label class="option-checkbox"><input type="checkbox" name="ppf-options" value="door-edges" data-price="3500"><span>Door Edges — R3,500</span></label>
+                        <label class="option-checkbox"><input type="checkbox" name="ppf-options" value="full-body" data-price="85000"><span>Full Body — R85,000</span></label>
+                    </div>
+                </div>
+
+                <div class="step-actions">
+                    <button type="button" class="btn btn-primary" onclick="goToStep(5)">View Quote Summary</button>
+                </div>
+            </div>
+
+            <!-- Step 5: Summary -->
+            <div class="booking-step" id="step5">
+                <div class="step-header">
+                    <button type="button" class="back-btn" onclick="goToStep(4)">← Back</button>
+                    <h2>Your Quote Summary</h2>
+                    <p class="step-subtitle">Review your selections and estimated costs</p>
+                </div>
+
+                <div class="booking-summary-wrapper">
+                    <div class="summary-details">
+                        <div class="summary-section">
+                            <h3>Selected Services</h3>
+                            <div id="summary-content"></div>
+                        </div>
+                    </div>
+
+                    <div class="payment-summary">
+                        <div class="summary-row"><span>Estimated Total</span><span id="subtotal">R 0.00</span></div>
+                        <div class="summary-row highlight"><span>Deposit Due</span><span id="deposit">R 0.00</span></div>
+                        <div class="summary-row"><span>Balance on Completion</span><span id="balance">R 0.00</span></div>
+                        <p class="deposit-note" id="deposit-note">Deposit varies by service type</p>
+
+                        <div class="pricing-guide">
+                            <div class="guide-item"><strong>Full Wrap</strong><span>50% deposit</span></div>
+                            <div class="guide-item"><strong>Partial Wrap</strong><span>25% deposit</span></div>
+                            <div class="guide-item"><strong>PPF</strong><span>25% deposit</span></div>
+                            <p class="guide-note">Prices are estimates. Final quote confirmed after vehicle inspection.</p>
+                        </div>
+
+                        <a href="#book-appointment" class="btn btn-primary btn-large btn-block">Book Appointment — R250 via PayPal</a>
+                        <p class="guide-note" style="margin-top: 15px; text-align: center;">The R250 booking fee is separate from your project deposit. <a href="#book-appointment">Pay with PayPal</a> to confirm your slot.</p>
+                    </div>
+                </div>
+
+                <div class="booking-confirmed" id="booking-confirmed" style="display: none;">
+                    <div class="confirmed-content">
+                        <div class="checkmark"><svg aria-hidden="true"><use href="assets/icons.svg#icon-check"></use></svg></div>
+                        <h2>Quote Request Received!</h2>
+                        <p>Thank you for your interest. Our team will contact you within 24 hours to confirm your quote and schedule your installation.</p>
+                        <a href="contact.html" class="btn btn-primary">Contact Us</a>
+                        <a href="index.html" class="btn btn-outline" style="margin-left: 10px;">Back to Home</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Book Appointment + PayPal -->
+    <section class="booking-form-section" id="book-appointment">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Secure Booking</span>
+                <h2 class="section-title">Book Your Appointment</h2>
+                <p class="section-description">Complete the form below and pay the R250 booking fee with PayPal to secure your installation date.</p>
+            </div>
+
+            <div id="booking-payment-wrapper">
+                <div class="booking-form-wrapper">
+                    <div class="booking-form-container">
+                        <form class="booking-form" id="appointmentForm">
+                            <h2>Your Details</h2>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="fullName">Full Name *</label>
+                                    <input type="text" id="fullName" name="fullName" required autocomplete="name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone Number *</label>
+                                    <input type="tel" id="phone" name="phone" required autocomplete="tel">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required autocomplete="email">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="vehicleMake">Vehicle Make *</label>
+                                    <input type="text" id="vehicleMake" name="vehicleMake" placeholder="e.g. BMW" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="vehicleModel">Vehicle Model *</label>
+                                    <input type="text" id="vehicleModel" name="vehicleModel" placeholder="e.g. 3 Series" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="vehicleYear">Vehicle Year *</label>
+                                    <input type="number" id="vehicleYear" name="vehicleYear" min="1990" max="2026" placeholder="2022" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="wrapType">Type of Wrap *</label>
+                                <select id="wrapType" name="wrapType" required>
+                                    <option value="">Select wrap type</option>
+                                    <option value="full-wrap">Full Wrap</option>
+                                    <option value="partial-wrap">Partial Wrap</option>
+                                    <option value="color-change">Colour Change</option>
+                                    <option value="branding">Branding</option>
+                                    <option value="ppf">Paint Protection Film</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="wrapColor">Preferred Colour / Design</label>
+                                <input type="text" id="wrapColor" name="wrapColor" placeholder="e.g. Matte black, gloss red">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="preferredDate">Preferred Date *</label>
+                                    <input type="date" id="preferredDate" name="preferredDate" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="preferredTime">Preferred Time *</label>
+                                    <select id="preferredTime" name="preferredTime" required>
+                                        <option value="">Select time</option>
+                                        <option value="08:00">8:00 AM</option>
+                                        <option value="09:00">9:00 AM</option>
+                                        <option value="10:00">10:00 AM</option>
+                                        <option value="11:00">11:00 AM</option>
+                                        <option value="12:00">12:00 PM</option>
+                                        <option value="13:00">1:00 PM</option>
+                                        <option value="14:00">2:00 PM</option>
+                                        <option value="15:00">3:00 PM</option>
+                                        <option value="16:00">4:00 PM</option>
+                                        <option value="17:00">5:00 PM</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="additionalNotes">Additional Notes</label>
+                                <textarea id="additionalNotes" name="additionalNotes" rows="4" placeholder="Any special requirements or questions…"></textarea>
+                            </div>
+                            <div class="form-group checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="termsAgreement" name="termsAgreement" required>
+                                    <span>I agree that the R250 booking fee is non-refundable and will be deducted from my final invoice.</span>
+                                </label>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="booking-fee-section">
+                        <div class="fee-card">
+                            <h3>Booking Fee</h3>
+                            <div class="fee-amount">R250</div>
+                            <p class="fee-note">Non-refundable · Paid via PayPal</p>
+                            <div class="fee-explanation">
+                                <p>The R250 fee secures your appointment and is credited toward your final invoice. Complete the form, then pay below with PayPal or card.</p>
+                            </div>
+                            <div class="payment-methods">
+                                <h4>Pay securely with</h4>
+                                <div class="paypal-brand">
+                                    <svg class="paypal-logo" viewBox="0 0 24 24" aria-hidden="true" width="24" height="24"><path fill="currentColor" d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944 3.72a.77.77 0 0 1 .758-.637h6.35c2.4 0 4.11.52 5.08 1.545.96 1.01 1.22 2.452.77 4.29-.02.09-.04.18-.07.27l-.98 4.62a.77.77 0 0 1-.758.637H9.66l-.95 4.52a.641.641 0 0 1-.633.54z"/></svg>
+                                    <span>PayPal</span>
+                                </div>
+                            </div>
+                            <p id="paypal-setup-notice" class="paypal-notice" role="status" aria-live="polite"></p>
+                            <div id="paypal-button-container" class="paypal-button-container"></div>
+                            <p class="guide-note paypal-help">Fill in all required fields and accept the terms before paying. You can also pay with a debit or credit card through PayPal.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="booking-confirmation" id="bookingConfirmation" style="display: none;">
+                <div class="confirmation-content">
+                    <div class="confirmation-icon"><svg aria-hidden="true"><use href="assets/icons.svg#icon-check"></use></svg></div>
+                    <h2>Booking confirmed</h2>
+                    <p>Thank you! Your R250 booking fee was received via PayPal. We will contact you shortly to confirm your appointment details.</p>
+                    <p id="booking-paypal-ref" class="booking-ref" style="display: none;"></p>
+                    <div class="confirmation-actions">
+                        <a href="index.html" class="btn btn-primary">Return to Home</a>
+                        <a href="contact.html" class="btn btn-outline">Contact Support</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">FAQ</span>
+                <h2 class="section-title">Pricing Questions</h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Why do prices vary by vehicle size?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Larger vehicles require more vinyl material and additional labour time. A hatchback uses significantly less film than an SUV or luxury sedan.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How does the R250 booking fee work?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>When you book online, you pay a R250 non-refundable fee via PayPal to secure your appointment. This amount is deducted from your final invoice. Your project deposit (25–50% depending on service) is arranged separately after we confirm your quote.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What's included in the project deposit?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>The project deposit secures materials and your installation slot. Full wraps require 50%; partial wraps and PPF require 25%. The balance is due on completion.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Do specialty finishes cost more?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes. Chrome, carbon fibre, and satin finishes use premium materials and may add 5–50% to the base price depending on your selection in the quote builder.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Can I get a quote for fleet vehicles?</h3>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely. Fleet and commercial branding projects receive custom volume pricing. Contact us with your fleet size for a tailored package.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Need a Custom Quote?</h2>
+                <p>Send us your vehicle details and we'll provide a detailed estimate within 24 hours.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-primary btn-large">Contact Us</a>
+                    <a href="tel:+27111234567" class="btn btn-outline btn-large">Call Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <span class="logo-text">WRAP<span class="logo-accent">PRO</span></span>
+                    </div>
+                    <p>Premium vehicle wrapping and branding services across South Africa. Transform. Protect. Stand Out.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Instagram"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#icon-instagram"></use></svg></a>
+                        <a href="#" aria-label="Facebook"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#icon-facebook"></use></svg></a>
+                        <a href="#" aria-label="YouTube"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#icon-youtube"></use></svg></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html#full-wraps">Full Car Wraps</a></li>
+                        <li><a href="services.html#fleet-branding">Fleet Branding</a></li>
+                        <li><a href="services.html#ppf">Paint Protection</a></li>
+                        <li><a href="services.html#tinting">Window Tinting</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <ul class="footer-contact">
+                        <li><svg class="icon icon-sm" aria-hidden="true"><use href="assets/icons.svg#icon-phone"></use></svg> +27 11 123 4567</li>
+                        <li><svg class="icon icon-sm" aria-hidden="true"><use href="assets/icons.svg#icon-mail"></use></svg> info@wrappro.co.za</li>
+                        <li><svg class="icon icon-sm" aria-hidden="true"><use href="assets/icons.svg#icon-map"></use></svg> Johannesburg, South Africa</li>
+                        <li><svg class="icon icon-sm" aria-hidden="true"><use href="assets/icons.svg#icon-clock"></use></svg> Mon-Fri: 8AM-6PM</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 WrapPro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/27111234567?text=Hi,%20I'd%20like%20a%20quote%20for%20car%20wrapping" class="whatsapp-float" target="_blank" aria-label="Contact us on WhatsApp">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+    </a>
+
+    <script src="main.js"></script>
+    <script src="paypal-config.js"></script>
+    <script src="pricing-booking.js"></script>
+</body>
+</html>
